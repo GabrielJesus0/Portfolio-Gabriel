@@ -28,18 +28,37 @@ body {
 
 .site-header {
   background: linear-gradient(
-  135deg,
-  #0f172a,
-  #14532d
-    );
+    135deg,
+    #0f172a,
+    #14532d
+  );
   color: white;
-  padding: 3rem 0;
+  padding: 4rem 0;
   text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255,255,255,0.08),
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 .site-header h1 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.site-header h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 .site-header p {
@@ -52,7 +71,6 @@ body {
   padding: 6rem 0;
   text-align: center;
 }
-
 .hero h2 {
   margin: 0 0 1rem;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
@@ -120,21 +138,68 @@ background: #22c55e;
 }
 
 .menu a {
+  position: relative;
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #4ade80;
+  transition: 0.3s;
+}
+.menu a:hover::after {
+  width: 100%;
+}
 
 .menu a:hover {
-  color: #4ade80;
-
+    color: #4ade80;
 }
 .foto-perfil {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border: 5px solid white;
-  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  object-position: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+  display: block;
+  margin-left: 40px;
+  margin-bottom: 20px;
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+
+  padding: 20px 30px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    max-width: 900px;
+  margin: 0 auto;
+.hero-texto {
+  text-align: left;
+  max-width: 500px;
+}
+@media (max-width: 768px) {
+  .hero-top {
+    flex-direction: column;
+    text-align: center;
   }
+
+  .hero-texto {
+    text-align: center;!important;
+    }
