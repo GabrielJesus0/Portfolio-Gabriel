@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contato — envie mensagem, WhatsApp, GitHub e e-mail." />
+    <title>Contato · Minha Loja</title>
+    <link rel="stylesheet" href="../css/estilo-principal.css" />
+  </head>
+  <body>
+    <header class="site-header with-photo">
+      <div class="container">
+        <img src="../imagens/perfil.webp" alt="Foto de Gabriel Jesus" class="foto-perfil header-photo">
+        <div class="header-body">
+          <nav class="menu">
+            <a href="../index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+          </nav>
+          <h1>Contato</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Meios de contato</h2>
+        <div class="contact-buttons">
+          <a class="button" href="https://wa.me/5534996610422" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="button" href="https://github.com/GabrielJesus0" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="mailto:gabriel.jesus.vilela.souto@gmail.com">E-mail</a>
+          <a class="button" href="https://www.linkedin.com/in/gabriel-jesus-302900335" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Envie uma mensagem</h2>
+        <form action="mailto:gabriel.jesus.vilela.souto@gmail.com" method="post" enctype="text/plain">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+
+          <button class="button" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Minha Loja. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -14,11 +14,18 @@ html,
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   line-height: 1.6;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
@@ -98,6 +105,47 @@ background: #22c55e;
   background: #0284c7;
 }
 
+.contact-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.contact-buttons a {
+  width: 100%;
+  text-align: center;
+}
+
+.card form {
+  display: grid;
+  gap: 1rem;
+  max-width: 720px;
+}
+
+.card form input,
+.card form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+  font: inherit;
+  color: #0f172a;
+}
+
+.card form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.site-header .menu {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
 .cards {
   display: grid;
   gap: 1.5rem;
@@ -130,6 +178,12 @@ background: #22c55e;
   margin: 0;
   color: #475569;
 }
+
+.page-actions {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 .menu {
   display: flex;
   justify-content: center;
@@ -162,16 +216,96 @@ background: #22c55e;
     color: #4ade80;
 }
 .foto-perfil {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   object-position: center;
 
-    display: block;
+  display: block;
   margin-left: 40px;
   margin-bottom: 20px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  
+  border: 4px solid rgba(255, 255, 255, 0.06);
+  
+  filter: none;
+  
+  transition: none;
+}
+
+/* Hover removido para evitar 'salto' e brilho extra */
+
+.header-photo {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  margin-left: 0;
+  margin-bottom: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border: none;
+}
+
+/* Header layout when photo is present: image left, menu centered beside it */
+.site-header.with-photo .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.site-header.with-photo .header-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.site-header.with-photo .menu {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  min-width: 0;
+}
+
+.site-header.with-photo h1 {
+  width: auto;
+  text-align: center;
+  margin: 0;
+}
+
+.site-header.with-photo .container > * {
+  min-width: 0;
+}
+
+@media (max-width: 520px) {
+  .header-photo {
+    width: 120px;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+  .site-header.with-photo .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-header.with-photo .menu {
+    position: static;
+    transform: none;
+    top: auto;
+    gap: 12px;
+    justify-content: center;
+    z-index: auto;
+  }
+  .site-header.with-photo h1 {
+    margin-top: 0.5rem;
+  }
 }
 
 
@@ -207,5 +341,5 @@ background: #22c55e;
   .hero-texto {
     text-align: center !important;
     }
-    
 }
+    
